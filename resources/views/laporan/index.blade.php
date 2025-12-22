@@ -47,7 +47,7 @@
     }
     
     .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #1f2937;
     }
     
     .pulse-animation {
@@ -73,7 +73,7 @@
             <div class="glass-card rounded-2xl p-6 shadow-2xl">
                 <div class="flex justify-between items-center">
                     <div>
-                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-2">
+                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gray-600">
                             📊 Laporan Penjualan
                         </h1>
                         <p class="text-xl text-gray-700 font-medium">Analisis dan laporan penjualan lengkap</p>
@@ -296,7 +296,7 @@
             <div class="bg-white rounded-xl shadow-inner overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full">
-                        <thead class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+                        <thead class="bg-gray-600 text-white">
                             <tr>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Ranking</th>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Nama Menu</th>
@@ -360,7 +360,7 @@
             <div class="bg-white rounded-xl shadow-inner overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full">
-                        <thead class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+                        <thead class="bg-gray-600 text-white">
                             <tr>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">ID</th>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Tanggal & Waktu</th>

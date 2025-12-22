@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\ProfileController;
 
 // Auth Routes
 Route::get('/', function () {
@@ -19,6 +20,14 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::middleware(['kasir.auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    
+    // Profile Routes
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/nama', [ProfileController::class, 'updateNamaKasir'])->name('profile.updateNamaKasir');
+    Route::put('/profile/username', [ProfileController::class, 'updateUsername'])->name('profile.updateUsername');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+
+
     
     // Route dummy untuk menu navigasi
     Route::get('/transaksi', function() { return 'Halaman Transaksi'; })->name('transaksi.index');

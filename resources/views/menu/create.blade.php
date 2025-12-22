@@ -5,7 +5,7 @@
 @push('styles')
 <style>
     .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #1f2937;
     }
     
     .glass-card {
@@ -40,7 +40,7 @@
                         <i class="fas fa-utensils text-white text-2xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gray-600">
                             Tambah Menu Baru
                         </h1>
                         <p class="text-gray-600 mt-1">Lengkapi informasi menu yang ingin ditambahkan</p>

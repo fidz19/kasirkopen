@@ -44,7 +44,7 @@
         }
         
         .sidebar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1a1a;
         }
         
         .sidebar-link {
@@ -123,6 +123,11 @@
                         <span>Laporan</span>
                     </a>
                     
+                    <a href="{{ route('profile.index') }}" class="sidebar-link flex items-center space-x-3 px-4 py-3 rounded-lg {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                        <i class="fas fa-user w-5"></i>
+                        <span>Profile</span>
+                    </a>
+                    
                     <hr class="border-white/20 my-4">
                     
                     <form action="{{ route('logout') }}" method="POST">
@@ -165,6 +170,11 @@
                     <a href="{{ route('laporan.index') }}" class="sidebar-link flex items-center space-x-3 px-4 py-3 rounded-lg {{ request()->routeIs('laporan.*') ? 'active' : '' }}">
                         <i class="fas fa-chart-bar w-5"></i>
                         <span>Laporan</span>
+                    </a>
+                    
+                    <a href="{{ route('profile.index') }}" class="sidebar-link flex items-center space-x-3 px-4 py-3 rounded-lg {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                        <i class="fas fa-user w-5"></i>
+                        <span>Profile</span>
                     </a>
                     
                     <hr class="border-white/20 my-4">

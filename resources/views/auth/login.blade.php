@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1a1a;
             min-height: 100vh;
         }
         
@@ -38,7 +38,7 @@
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #6b7280;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -50,10 +50,10 @@
         <div class="glass-effect rounded-2xl shadow-2xl p-8">
             <!-- Logo & Title -->
             <div class="text-center mb-8">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl mb-4">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gray-600 rounded-2xl mb-4">
                     <i class="fas fa-cash-register text-white text-4xl"></i>
                 </div>
-                <h1 class="text-3xl font-bold gradient-text mb-2">Kasir Kopen</h1>
+                <h1 class="text-3xl text-black font-bold  mb-2">Kasir Kopen</h1>
                 <p class="text-gray-600">Sistem Point of Sale Terintegrasi</p>
             </div>
 
@@ -65,7 +65,7 @@
             @endif
 
             @if($errors->any())
-                <div class="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                <div class="mb-4 p-4 bg-gray-500 border border-red-200 text-red-700 rounded-lg">
                     <i class="fas fa-exclamation-circle mr-2"></i>
                     @foreach($errors->all() as $error)
                         {{ $error }}
@@ -79,7 +79,7 @@
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">
-                        <i class="fas fa-user mr-2 text-purple-600"></i>Username
+                        <i class="fas fa-user mr-2 text-black"></i>Username
                     </label>
                     <input 
                         type="text" 
@@ -94,7 +94,7 @@
 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">
-                        <i class="fas fa-lock mr-2 text-purple-600"></i>Password
+                        <i class="fas fa-lock mr-2 text-blacka"></i>Password
                     </label>
                     <div class="relative">
                         <input 
@@ -117,14 +117,14 @@
 
                 <button 
                     type="submit"
-                    class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition duration-200"
+                    class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition duration-200"
                 >
                     <i class="fas fa-sign-in-alt mr-2"></i>Masuk
                 </button>
             </form>
 
         <!-- Footer -->
-        <div class="text-center mt-6 text-white">
+        <div class="text-center mt-6 text-black">
             <p class="text-sm">
                 &copy; {{ date('Y') }} Kasir Kopen. All rights reserved.
             </p>

@@ -2,18 +2,17 @@
 {{-- Tambahkan ini di head jika belum ada: --}}
 {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
 
-<nav class="shadow-lg sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-emerald-600 to-teal-600 border-b border-emerald-500/30" x-data="{ open: false, profileOpen: false }">
+<nav class="shadow-lg sticky top-0 z-50 backdrop-blur-md bg-linear-to-r from-emerald-600 to-teal-600 border-b border-emerald-500/30" x-data="{ open: false, profileOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <!-- Logo Section -->
             <div class="flex items-center space-x-8">
                 <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ease-out">
+                    <div class="w-12 h-12 bg-linear-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ease-out">
                         <i class="fas fa-cash-register text-emerald-600 text-xl group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
                     <div class="hidden sm:block">
                         <span class="text-2xl font-bold text-white group-hover:text-emerald-100 transition-all duration-300">Kasir Kopen</span>
-                        <p class="text-xs text-emerald-100 -mt-1">Sistem POS Terpadu</p>
                     </div>
                 </a>
                 
@@ -78,14 +77,14 @@
                 <!-- Notification Button -->
                 <button class="relative p-3 rounded-xl hover:bg-white/20 transition-all duration-300 group">
                     <i class="fas fa-bell text-white text-lg group-hover:text-emerald-100 transition-colors duration-300 group-hover:animate-pulse"></i>
-                    <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-gradient-to-r from-red-500 to-pink-500 rounded-full animate-pulse shadow-lg"></span>
+                    <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-linear-to-r from-red-500 to-pink-500 rounded-full animate-pulse shadow-lg"></span>
                     <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full animate-ping"></span>
                 </button>
                 
                 <!-- Profile Dropdown -->
                 <div class="relative" @click.away="profileOpen = false">
                     <button @click="profileOpen = !profileOpen" class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-white/20 transition-all duration-300 group border-2 border-transparent hover:border-white/30">
-                        <div class="w-10 h-10 bg-gradient-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <div class="w-10 h-10 bg-linear-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                             <span class="text-emerald-600 font-bold text-sm">{{ substr(auth()->user()->nama_kasir ?? 'A', 0, 1) }}</span>
                         </div>
                         <div class="text-left hidden lg:block">
@@ -106,22 +105,22 @@
                          class="absolute right-0 mt-3 w-56 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl py-2 border border-gray-100 overflow-hidden z-50">
                         
                         <!-- Profile Header -->
-                        <div class="px-4 py-3 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-gray-100">
+                        <div class="px-4 py-3 bg-linear-to-r from-emerald-50 to-teal-50 border-b border-gray-100">
                             <p class="text-sm font-semibold text-gray-800">{{ auth()->user()->nama_kasir ?? 'Admin' }}</p>
                             <p class="text-xs text-gray-500">{{ auth()->user()->username ?? 'admin' }}</p>
                         </div>
                         
-                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-linear-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
                             <i class="fas fa-user mr-3 text-emerald-600 w-5 group-hover:scale-110 transition-transform duration-300"></i>
                             <span class="group-hover:translate-x-1 transition-transform duration-300">Profil Saya</span>
                         </a>
                         
-                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-linear-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
                             <i class="fas fa-cog mr-3 text-emerald-600 w-5 group-hover:rotate-90 transition-transform duration-300"></i>
                             <span class="group-hover:translate-x-1 transition-transform duration-300">Pengaturan</span>
                         </a>
                         
-                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
+                        <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-linear-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300 group">
                             <i class="fas fa-question-circle mr-3 text-emerald-600 w-5 group-hover:scale-110 transition-transform duration-300"></i>
                             <span class="group-hover:translate-x-1 transition-transform duration-300">Bantuan</span>
                         </a>
@@ -130,7 +129,7 @@
                         
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="w-full flex items-center px-4 py-3 text-sm text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 transition-all duration-300 group">
+                            <button type="submit" class="w-full flex items-center px-4 py-3 text-sm text-red-600 hover:bg-linear-to-r hover:from-red-50 hover:to-pink-50 transition-all duration-300 group">
                                 <i class="fas fa-sign-out-alt mr-3 w-5 group-hover:translate-x-1 transition-transform duration-300"></i>
                                 <span class="group-hover:translate-x-1 transition-transform duration-300">Logout</span>
                             </button>
@@ -156,11 +155,11 @@
          x-transition:leave="transition ease-in duration-200"
          x-transition:leave-start="opacity-100 transform translate-y-0"
          x-transition:leave-end="opacity-0 transform -translate-y-4"
-         class="md:hidden border-t border-emerald-500/30 bg-gradient-to-r from-emerald-600 to-teal-600 backdrop-blur-lg">
+         class="md:hidden border-t border-emerald-500/30 bg-linear-to-r from-emerald-600 to-teal-600 backdrop-blur-lg">
         <div class="px-4 py-4 space-y-2">
             <!-- User Info Mobile -->
             <div class="flex items-center space-x-3 px-4 py-3 bg-white/20 rounded-xl mb-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-md">
+                <div class="w-12 h-12 bg-linear-to-br from-white to-emerald-100 rounded-xl flex items-center justify-center shadow-md">
                     <span class="text-emerald-600 font-bold">{{ substr(auth()->user()->nama_kasir ?? 'A', 0, 1) }}</span>
                 </div>
                 <div>

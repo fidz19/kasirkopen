@@ -47,7 +47,7 @@
     }
     
     .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background:#1f2937;
     }
 </style>
 @endpush
@@ -60,7 +60,7 @@
             <div class="glass-card rounded-2xl p-6 shadow-2xl">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-2">
+                        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gray-600">
                             👋 Selamat Datang!
                         </h1>
                         <p class="text-xl text-gray-700 font-medium">
@@ -218,7 +218,7 @@
         <div class="mt-6 glass-card rounded-2xl p-8 shadow-xl">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-900 flex items-center">
-                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
+                    <div class="w-10 h-10 bg-gray-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
                         <i class="fas fa-history text-white"></i>
                     </div>
                     Transaksi Terbaru
@@ -232,7 +232,7 @@
             <div class="bg-white rounded-xl shadow-inner overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full">
-                        <thead class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+                        <thead class="bg-gray-600 text-white">
                             <tr>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">ID Transaksi</th>
                                 <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Tanggal & Waktu</th>
@@ -246,7 +246,7 @@
                             @forelse($transaksiTerbaru as $transaksi)
                                 <tr class="hover:bg-purple-50 transition-colors">
                                     <td class="px-6 py-4">
-                                        <span class="font-mono font-bold text-purple-600">#{{ $transaksi->id_transaksi }}</span>
+                                        <span class="font-mono font-bold text-gray-600">#{{ $transaksi->id_transaksi }}</span>
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="flex flex-col">
@@ -270,8 +270,7 @@
                                     <td class="px-6 py-4">
                                         <span class="px-3 py-1.5 text-xs font-bold rounded-full shadow-sm
                                             @if($transaksi->metode_pembayaran === 'tunai') bg-green-100 text-green-700
-                                            @elseif($transaksi->metode_pembayaran === 'debit') bg-blue-100 text-blue-700
-                                            @elseif($transaksi->metode_pembayaran === 'kredit') bg-yellow-100 text-yellow-700
+                                            @elseif($transaksi->metode_pembayaran === 'qris') bg-yellow-100 text-yellow-700
                                             @else bg-purple-100 text-purple-700
                                             @endif">
                                             {{ ucfirst($transaksi->metode_pembayaran) }}
@@ -279,7 +278,7 @@
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         <a href="{{ route('transaksi.show', $transaksi) }}" 
-                                           class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 text-white rounded-xl hover:shadow-lg transition-all">
+                                           class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl hover:shadow-lg transition-all">
                                             <i class="fas fa-eye"></i>
                                         </a>
                                     </td>

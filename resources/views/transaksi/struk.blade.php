@@ -18,7 +18,7 @@
             padding: 20px;
             max-width: 320px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1f2937;
             min-height: 100vh;
         }
 
@@ -219,8 +219,6 @@
         }
 
         .badge-tunai { background: #d4edda; color: #155724; }
-        .badge-debit { background: #d1ecf1; color: #0c5460; }
-        .badge-kredit { background: #fff3cd; color: #856404; }
         .badge-qris { background: #e7d4f7; color: #6f42c1; }
     </style>
 </head>
@@ -233,10 +231,10 @@
     <div class="receipt-container">
         <!-- Header -->
         <div class="header">
-            <h1>🏪 Kasir Modern</h1>
-            <p>Jl. Contoh No. 123, Surakarta</p>
+            <h1>🏪 Kasir Kopen</h1>
+            <p>Jl. Raya PUK Balen, suwaloh, kec Balen</p>
             <p>📞 Telp: 0812-3456-7890</p>
-            <p>📧 Email: info@kasirmodern.com</p>
+            <p>📧 Email: info@kasirkopen.com</p>
         </div>
 
         <!-- Transaction Info -->
