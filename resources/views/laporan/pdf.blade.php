@@ -15,23 +15,23 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 11px;
             line-height: 1.6;
-            color: #333;
+            color: #111;
             padding: 25px;
-            background: #f8f9fa;
+            background: #fff;
         }
 
         .header {
             text-align: center;
             margin-bottom: 35px;
             padding: 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
         .header h1 {
             font-size: 32px;
-            color: white;
+            color: #000;
             margin-bottom: 8px;
             font-weight: 900;
             letter-spacing: 1px;
@@ -40,14 +40,14 @@
 
         .header h2 {
             font-size: 20px;
-            color: rgba(255, 255, 255, 0.95);
+            color: #374151;
             margin-bottom: 12px;
             font-weight: 700;
         }
 
         .header p {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.85);
+            color: #6b7280;
             font-weight: 500;
         }
 
@@ -65,13 +65,13 @@
             background: white;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #667eea;
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid #000;
         }
 
         .summary-item h3 {
             font-size: 10px;
-            color: #666;
+            color: #4b5563;
             margin-bottom: 8px;
             text-transform: uppercase;
             font-weight: 700;
@@ -81,20 +81,19 @@
         .summary-item p {
             font-size: 24px;
             font-weight: 900;
-            color: #667eea;
+            color: #000;
             letter-spacing: -0.5px;
         }
 
         .section-title {
             font-size: 18px;
             font-weight: 900;
-            color: #333;
+            color: #000;
             margin: 30px 0 20px 0;
             padding: 12px 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
             display: flex;
             align-items: center;
         }
@@ -106,11 +105,11 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
         }
 
         table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000;
             color: white;
         }
 
@@ -125,16 +124,13 @@
 
         table td {
             padding: 12px;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid #e5e7eb;
             font-size: 11px;
+            color: #1f2937;
         }
 
         table tbody tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        table tbody tr:hover {
-            background: #f0f3ff;
+            background: #f9fafb;
         }
 
         table tbody tr:last-child td {
@@ -157,35 +153,26 @@
             font-weight: 800;
             letter-spacing: 0.3px;
             text-transform: uppercase;
+            border: 1px solid #e5e7eb;
         }
 
-        .badge-green {
-            background: #d4edda;
-            color: #155724;
+        .badge-normal {
+            background: #f3f4f6;
+            color: #374151;
         }
-
-        .badge-blue {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-
-        .badge-yellow {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .badge-purple {
-            background: #e2d9f3;
-            color: #5a32a3;
+        
+        .badge-dark {
+            background: #1f2937;
+            color: #fff;
         }
 
         .footer {
             margin-top: 50px;
             padding-top: 25px;
-            border-top: 3px solid #667eea;
+            border-top: 3px solid #000;
             text-align: center;
             font-size: 10px;
-            color: #666;
+            color: #6b7280;
         }
 
         .footer p {
@@ -193,7 +180,7 @@
         }
 
         .footer strong {
-            color: #667eea;
+            color: #000;
             font-size: 13px;
         }
 
@@ -211,13 +198,13 @@
             background: white;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border-top: 3px solid #667eea;
+            border: 1px solid #e5e7eb;
+            border-top: 3px solid #000;
         }
 
         .payment-method p {
             font-size: 9px;
-            color: #666;
+            color: #6b7280;
             margin-bottom: 5px;
             text-transform: uppercase;
             font-weight: 700;
@@ -226,14 +213,14 @@
 
         .payment-method h4 {
             font-size: 22px;
-            color: #333;
+            color: #000;
             font-weight: 900;
             margin-bottom: 3px;
         }
 
         .payment-method .amount {
             font-size: 10px;
-            color: #667eea;
+            color: #374151;
             font-weight: 700;
         }
 
@@ -241,25 +228,25 @@
             display: inline-block;
             width: 32px;
             height: 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000;
             color: white;
             border-radius: 10px;
             text-align: center;
             line-height: 32px;
             font-weight: 900;
             font-size: 14px;
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
         }
 
         .highlight {
             font-weight: 900;
-            color: #667eea;
+            color: #000;
         }
 
         tfoot {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #f3f4f6;
+            color: #000;
             font-weight: 900;
+            border-top: 2px solid #000;
         }
 
         tfoot td {
@@ -324,7 +311,7 @@
                     </td>
                     <td><strong class="highlight">{{ $menu->nama_menu }}</strong></td>
                     <td>
-                        <span class="badge badge-purple">{{ $menu->kategori }}</span>
+                        <span class="badge badge-normal">{{ $menu->kategori }}</span>
                     </td>
                     <td class="text-center"><strong class="highlight">{{ $menu->total_terjual }}</strong> item</td>
                     <td class="text-right"><strong class="highlight">Rp {{ number_format($menu->total_pendapatan, 0, ',', '.') }}</strong></td>
@@ -359,10 +346,10 @@
                     <td><strong>{{ $transaksi->kasir->nama_kasir }}</strong></td>
                     <td>
                         <span class="badge 
-                            @if($transaksi->metode_pembayaran === 'tunai') badge-green
-                            @elseif($transaksi->metode_pembayaran === 'debit') badge-blue
-                            @elseif($transaksi->metode_pembayaran === 'kredit') badge-yellow
-                            @else badge-purple
+                            @if($transaksi->metode_pembayaran === 'tunai') badge-normal
+                            @elseif($transaksi->metode_pembayaran === 'debit') badge-normal
+                            @elseif($transaksi->metode_pembayaran === 'kredit') badge-dark
+                            @else badge-dark
                             @endif">
                             {{ ucfirst($transaksi->metode_pembayaran) }}
                         </span>

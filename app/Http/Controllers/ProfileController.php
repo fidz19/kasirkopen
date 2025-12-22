@@ -6,15 +6,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Kasir;
+use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('kasir.auth');
+    }
+
     /**
      * Tampilkan halaman profile
      */
     public function index()
     {
         $kasir = Auth::guard('kasir')->user();
+        if (!$kasir) {
+            return redirect()->route('login')->withErrors(['error' => 'Silakan login terlebih dahulu']);
+        }
+
         return view('profile.index', compact('kasir'));
     }
 
@@ -24,10 +34,16 @@ class ProfileController extends Controller
     public function updateUsername(Request $request)
     {
         $kasir = Auth::guard('kasir')->user();
-        
+        if (!$kasir) {
+            return redirect()->route('login')->withErrors(['error' => 'Silakan login terlebih dahulu']);
+        }
+
         // Validasi input
         $request->validate([
-            'username' => 'required|string|min:3|unique:kasir,username,' . $kasir->id_kasir . ',id_kasir',
+            'username' => [
+                'required', 'string', 'min:3',
+                Rule::unique('kasir', 'username')->ignore($kasir->getKey(), $kasir->getKeyName()),
+            ],
         ], [
             'username.required' => 'Username wajib diisi',
             'username.min' => 'Username minimal 3 karakter',
@@ -48,11 +64,14 @@ class ProfileController extends Controller
     public function updatePassword(Request $request)
     {
         $kasir = Auth::guard('kasir')->user();
-        
+        if (!$kasir) {
+            return redirect()->route('login')->withErrors(['error' => 'Silakan login terlebih dahulu']);
+        }
+
         // Validasi input
         $request->validate([
-            'password_lama' => 'required',
-            'password_baru' => 'required|min:6|confirmed',
+            'password_lama' => 'required|string|min:6',
+            'password_baru' => 'required|string|min:6|confirmed',
         ], [
             'password_lama.required' => 'Password lama wajib diisi',
             'password_baru.required' => 'Password baru wajib diisi',
@@ -79,7 +98,10 @@ class ProfileController extends Controller
     public function updateNamaKasir(Request $request)
     {
         $kasir = Auth::guard('kasir')->user();
-        
+        if (!$kasir) {
+            return redirect()->route('login')->withErrors(['error' => 'Silakan login terlebih dahulu']);
+        }
+
         // Validasi input
         $request->validate([
             'nama_kasir' => 'required|string|min:3',

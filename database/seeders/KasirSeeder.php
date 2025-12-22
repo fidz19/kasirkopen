@@ -19,9 +19,9 @@ class KasirSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nama_kasir' => 'Budi Santoso',
-                'username' => 'budi',
-                'password' => Hash::make('budi123'),
+                'nama_kasir' => 'Azis',
+                'username' => 'azis',
+                'password' => Hash::make('azis123'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

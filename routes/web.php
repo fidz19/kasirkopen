@@ -29,10 +29,8 @@ Route::middleware(['kasir.auth'])->group(function () {
 
 
     
-    // Route dummy untuk menu navigasi
-    Route::get('/transaksi', function() { return 'Halaman Transaksi'; })->name('transaksi.index');
-    Route::get('/menu', function() { return 'Halaman Menu'; })->name('menu.index');
-    Route::get('/laporan', function() { return 'Halaman Laporan'; })->name('laporan.index');
+
+
 
 
 });

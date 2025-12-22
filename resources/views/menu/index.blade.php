@@ -5,22 +5,23 @@
 @push('styles')
 <style>
     .gradient-bg {
-        background: #1f2937;
+        background: #f9fafb;
     }
     
     .glass-card {
         background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
     
     .menu-card {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
     }
     
     .menu-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: #000;
     }
 </style>
 @endpush
@@ -30,21 +31,21 @@
     <div class="container mx-auto px-4">
         <!-- Header -->
         <div class="mb-8">
-            <div class="glass-card rounded-2xl p-6 shadow-2xl">
+            <div class="glass-card rounded-xl p-6 shadow-sm">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div class="flex items-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg mr-4">
+                        <div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center shadow-lg mr-4">
                             <i class="fas fa-utensils text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gray-600">
+                            <h1 class="text-4xl font-black text-gray-900">
                                 Kelola Menu
                             </h1>
-                            <p class="text-gray-600 mt-1">Manajemen menu makanan dan minuman</p>
+                            <p class="text-gray-500 mt-1 font-medium">Manajemen menu makanan dan minuman</p>
                         </div>
                     </div>
                     <a href="{{ route('menu.create') }}" 
-                       class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all">
+                       class="bg-black text-white px-6 py-3 rounded-lg font-bold shadow-sm hover:bg-gray-800 transition-all uppercase tracking-wide text-sm">
                         <i class="fas fa-plus mr-2"></i>Tambah Menu
                     </a>
                 </div>
@@ -53,18 +54,18 @@
 
         <!-- Alert Messages -->
         @if(session('success'))
-            <div class="mb-6 glass-card rounded-xl p-5 shadow-lg">
+            <div class="mb-6 glass-card rounded-xl p-5 shadow-sm border-l-4 border-black">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center mr-4">
-                        <i class="fas fa-check-circle text-white text-lg"></i>
+                    <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-check text-white text-sm"></i>
                     </div>
-                    <p class="text-gray-800 font-semibold">{{ session('success') }}</p>
+                    <p class="text-gray-900 font-bold">{{ session('success') }}</p>
                 </div>
             </div>
         @endif
 
         <!-- Search & Filter -->
-        <div class="glass-card rounded-2xl p-6 mb-8 shadow-xl">
+        <div class="glass-card rounded-xl p-6 mb-8 shadow-sm">
             <form method="GET" action="{{ route('menu.index') }}" class="flex flex-col md:flex-row gap-4">
                 <div class="flex-1">
                     <input 
@@ -72,12 +73,12 @@
                         name="search" 
                         value="{{ request('search') }}"
                         placeholder="Cari menu..."
-                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition"
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition font-medium"
                     >
                 </div>
                 <select 
                     name="kategori"
-                    class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition"
+                    class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition font-medium"
                 >
                     <option value="">Semua Kategori</option>
                     @foreach($kategoris as $kategori)
@@ -86,10 +87,10 @@
                         </option>
                     @endforeach
                 </select>
-                <button type="submit" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition">
+                <button type="submit" class="bg-black text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800 transition uppercase tracking-wide text-sm">
                     <i class="fas fa-search mr-2"></i>Cari
                 </button>
-                <a href="{{ route('menu.index') }}" class="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 transition text-center">
+                <a href="{{ route('menu.index') }}" class="bg-white border-2 border-gray-200 text-gray-700 px-6 py-3 rounded-lg font-bold hover:border-black hover:text-black transition text-center uppercase tracking-wide text-sm">
                     <i class="fas fa-redo mr-2"></i>Reset
                 </a>
             </form>
@@ -98,33 +99,33 @@
         <!-- Menu Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @forelse($menus as $menu)
-                <div class="menu-card glass-card rounded-2xl overflow-hidden shadow-xl">
+                <div class="menu-card glass-card rounded-xl overflow-hidden shadow-sm">
                     <!-- Gambar Menu -->
-                    <div class="relative h-56 overflow-hidden">
+                    <div class="relative h-56 overflow-hidden bg-gray-100">
                         @if($menu->gambar)
                             <img src="{{ asset('storage/' . $menu->gambar) }}" 
                                  alt="{{ $menu->nama_menu }}"
-                                 class="w-full h-full object-cover"
-                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center\'><div class=\'text-center\'><i class=\'fas fa-image text-white text-6xl mb-3 opacity-50\'></i><p class=\'text-white text-sm font-medium\'>Gambar tidak ditemukan</p></div></div>'">
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gray-200 flex items-center justify-center\'><div class=\'text-center\'><i class=\'fas fa-image text-gray-400 text-6xl mb-3\'></i><p class=\'text-gray-500 text-sm font-bold\'>Gambar tidak ditemukan</p></div></div>'">
                         @else
-                            <div class="w-full h-full bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center">
+                            <div class="w-full h-full bg-gray-200 flex items-center justify-center">
                                 <div class="text-center">
-                                    <i class="fas fa-utensils text-white text-6xl mb-3 opacity-50"></i>
-                                    <p class="text-white text-sm font-medium">Tidak ada gambar</p>
+                                    <i class="fas fa-utensils text-gray-400 text-6xl mb-3"></i>
+                                    <p class="text-gray-500 text-sm font-bold">Tidak ada gambar</p>
                                 </div>
                             </div>
                         @endif
                         
                         <!-- Badge Kategori -->
                         <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-purple-700 rounded-full text-xs font-bold shadow-lg">
+                            <span class="px-3 py-1.5 bg-white text-black border border-gray-200 rounded-lg text-xs font-bold shadow-sm uppercase tracking-wide">
                                 <i class="fas fa-tag mr-1"></i>{{ $menu->kategori }}
                             </span>
                         </div>
 
                         <!-- Badge Stok -->
                         <div class="absolute top-3 right-3">
-                            <span class="px-3 py-1.5 {{ $menu->stok > 10 ? 'bg-green-500' : ($menu->stok > 0 ? 'bg-yellow-500' : 'bg-red-500') }} rounded-full text-white text-xs font-bold shadow-lg">
+                            <span class="px-3 py-1.5 {{ $menu->stok > 10 ? 'bg-black text-white' : ($menu->stok > 0 ? 'bg-gray-800 text-white' : 'bg-white text-black border-2 border-black') }} rounded-lg text-xs font-bold shadow-sm uppercase tracking-wide">
                                 <i class="fas fa-box mr-1"></i>{{ $menu->stok }}
                             </span>
                         </div>
@@ -132,25 +133,25 @@
 
                     <!-- Info Menu -->
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $menu->nama_menu }}</h3>
+                        <h3 class="text-lg font-black text-gray-900 mb-3 leading-tight">{{ $menu->nama_menu }}</h3>
                         
                         <div class="mb-4">
-                            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Harga</p>
-                            <p class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                            <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Harga</p>
+                            <p class="text-2xl font-black text-black">
                                 {{ $menu->harga_format }}
                             </p>
                         </div>
 
                         @if($menu->deskripsi)
-                            <p class="text-sm text-gray-600 mb-4 line-clamp-2">{{ $menu->deskripsi }}</p>
+                            <p class="text-sm text-gray-600 mb-4 line-clamp-2 font-medium">{{ $menu->deskripsi }}</p>
                         @endif
 
                         <!-- Update Stok -->
-                        <div class="mb-4 bg-gray-50 rounded-xl p-4 border border-gray-200">
+                        <div class="mb-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <form method="POST" action="{{ route('menu.updateStok', $menu) }}">
                                 @csrf
-                                <label class="text-xs font-bold text-gray-700 uppercase tracking-wide flex items-center mb-3">
-                                    <i class="fas fa-warehouse mr-2 text-purple-600"></i>
+                                <label class="text-xs font-bold text-gray-900 uppercase tracking-wide flex items-center mb-3">
+                                    <i class="fas fa-warehouse mr-2"></i>
                                     Kelola Stok
                                 </label>
                                 <div class="flex items-stretch gap-2">
@@ -159,9 +160,9 @@
                                         name="stok" 
                                         value="{{ $menu->stok }}"
                                         min="0"
-                                        class="w-20 px-3 py-2 border-2 border-gray-300 rounded-lg text-center font-bold text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition"
+                                        class="w-20 px-3 py-2 border-2 border-gray-300 rounded-lg text-center font-bold text-gray-900 focus:ring-2 focus:ring-black focus:border-black transition bg-white"
                                     >
-                                    <button type="submit" class="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:shadow-lg transition font-bold text-sm">
+                                    <button type="submit" class="flex-1 bg-black text-white rounded-lg hover:bg-gray-800 transition font-bold text-xs uppercase tracking-wide">
                                         <i class="fas fa-save mr-1"></i>Simpan
                                     </button>
                                 </div>
@@ -171,7 +172,7 @@
                         <!-- Action Buttons -->
                         <div class="flex gap-3">
                             <a href="{{ route('menu.edit', $menu) }}" 
-                               class="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2.5 rounded-xl text-center hover:shadow-lg transition font-bold">
+                               class="flex-1 bg-white border-2 border-gray-200 text-gray-900 py-2.5 rounded-lg text-center hover:border-black hover:text-black transition font-bold text-sm uppercase tracking-wide">
                                 <i class="fas fa-edit mr-1"></i>Edit
                             </a>
                             <form method="POST" action="{{ route('menu.destroy', $menu) }}" 
@@ -179,7 +180,7 @@
                                   class="flex-1">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2.5 rounded-xl hover:shadow-lg transition font-bold">
+                                <button type="submit" class="w-full bg-white border-2 border-gray-200 text-gray-900 py-2.5 rounded-lg hover:bg-black hover:text-white hover:border-black transition font-bold text-sm uppercase tracking-wide">
                                     <i class="fas fa-trash mr-1"></i>Hapus
                                 </button>
                             </form>
@@ -188,14 +189,14 @@
                 </div>
             @empty
                 <div class="col-span-full">
-                    <div class="glass-card rounded-2xl p-16 text-center shadow-xl">
-                        <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                            <i class="fas fa-utensils text-white text-6xl"></i>
+                    <div class="glass-card rounded-xl p-16 text-center shadow-sm">
+                        <div class="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-utensils text-gray-400 text-6xl"></i>
                         </div>
-                        <p class="text-gray-600 text-2xl font-bold mb-2">Belum ada menu</p>
-                        <p class="text-gray-500 mb-6">Mulai tambahkan menu pertama Anda</p>
+                        <p class="text-gray-900 text-2xl font-black mb-2">Belum ada menu</p>
+                        <p class="text-gray-500 mb-6 font-medium">Mulai tambahkan menu pertama Anda</p>
                         <a href="{{ route('menu.create') }}" 
-                           class="inline-flex items-center bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-8 py-4 rounded-xl hover:shadow-2xl transition font-bold">
+                           class="inline-flex items-center bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition font-bold uppercase tracking-wide text-sm">
                             <i class="fas fa-plus mr-2"></i>Tambah Menu Pertama
                         </a>
                     </div>

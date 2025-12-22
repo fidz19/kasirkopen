@@ -21,7 +21,7 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f9fafb;
             min-height: 100vh;
         }
         
@@ -32,7 +32,7 @@
         .glass-effect {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .hover-lift:hover {
@@ -71,31 +71,33 @@
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000;
+            /* No gradient for monochrome */
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000; /* Black */
+            color: #fff;
             transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
+            background: #1f2937; /* Gray 800 */
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
         
         .card:hover {
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: #d1d5db;
         }
         
         ::-webkit-scrollbar {
@@ -103,22 +105,22 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #f3f4f6;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #9ca3af;
             border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: #764ba2;
+            background: #6b7280;
         }
     </style>
     
     @stack('styles')
 </head>
-<body class="antialiased">
+<body class="antialiased text-gray-900">
     <div class="min-h-screen flex flex-col">
         @include('components.nav')
         
@@ -141,10 +143,19 @@
         
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
-            notification.className = `fixed top-4 right-4 px-6 py-4 rounded-lg shadow-lg z-50 smooth-transition ${
-                type === 'success' ? 'bg-green-500' : 'bg-red-500'
-            } text-white`;
-            notification.textContent = message;
+            // Monochrome notification styles
+            const bgClass = type === 'success' ? 'bg-black' : (type === 'error' ? 'bg-white border-2 border-black text-black' : 'bg-gray-800');
+            const textClass = type === 'error' ? 'text-black' : 'text-white';
+            
+            notification.className = `fixed top-4 right-4 px-6 py-4 rounded-lg shadow-xl z-50 smooth-transition ${bgClass} ${textClass} font-medium flex items-center border border-transparent`;
+            
+            // Add icon
+            const icon = document.createElement('i');
+            icon.className = `fas fa-${type === 'success' ? 'check' : (type === 'error' ? 'exclamation' : 'info')}-circle mr-2`;
+            notification.prepend(icon);
+
+            notification.appendChild(document.createTextNode(message));
+            
             notification.style.opacity = '0';
             notification.style.transform = 'translateY(-20px)';
             
