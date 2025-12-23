@@ -33,14 +33,14 @@
             text-align: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 2px dashed #667eea;
+            border-bottom: 2px dashed #000003;
         }
 
         .header h1 {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 8px;
-            color: #667eea;
+            color: #000003;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -80,7 +80,7 @@
         }
 
         .divider-double {
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #000003;
             margin: 15px 0;
         }
 
@@ -93,7 +93,7 @@
             padding: 10px;
             background: #f8f9fa;
             border-radius: 8px;
-            border-left: 3px solid #667eea;
+            border-left: 3px solid #000003;
         }
 
         .item-name {
@@ -111,7 +111,7 @@
 
         .item-detail span:last-child {
             font-weight: bold;
-            color: #667eea;
+            color: #000003;
         }
 
         .total-section {
@@ -133,21 +133,21 @@
             font-weight: bold;
             padding-top: 10px;
             margin-top: 10px;
-            border-top: 2px solid #667eea;
-            color: #667eea;
+            border-top: 2px solid #000003;
+            color: #000003;
         }
 
         .footer {
             text-align: center;
             margin-top: 25px;
             padding-top: 15px;
-            border-top: 2px dashed #667eea;
+            border-top: 2px dashed #000003;
         }
 
         .footer .thank-you {
             font-size: 16px;
             font-weight: bold;
-            color: #667eea;
+            color: #000003;
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -188,7 +188,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000003 0%, #764ba2 100%);
             color: white;
             border: none;
             padding: 18px 35px;
